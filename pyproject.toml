@@ -1,0 +1,9 @@
+[project]
+name = "flectos-public-reference"
+version = "0.1.0"
+description = "Sanitized reference implementations for selected Flectos AI engineering patterns."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
