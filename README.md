@@ -299,6 +299,51 @@ The objective is to maximize product value while keeping inference cost and late
 
 `Linux` · `Docker` · `VPS` · `GitHub` · `Operational Monitoring`
 
+
+---
+
+## Public engineering artifacts
+
+The production implementation remains private, but this repository now includes **sanitized, executable references** for selected engineering patterns.
+
+```text
+examples/
+  router.py
+
+tests/
+  test_router.py
+
+evals/
+  sample-intents.jsonl
+
+docs/
+  architecture.md
+  observability.md
+  cost-strategy.md
+  security.md
+
+.github/workflows/
+  reference-tests.yml
+```
+
+### Run the public regression tests
+
+Requires Python 3.11+.
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The current public suite validates:
+
+- PT-BR purchase-decision routing
+- expense registration routing
+- income registration routing
+- explicit conversation-state precedence
+- BRL monetary parsing
+
+The files under `examples/` are intentionally simplified reference implementations. They demonstrate engineering decisions without exposing private workflows, proprietary prompts, credentials or user data.
+
 ---
 
 ## Repository scope
